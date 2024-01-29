@@ -38,35 +38,55 @@ function Show() {
     }
   }, []);
 
-  const [show, setShow] = useState('');
-  const [name, setName] = useState('');
-  const [date, setDate] = useState('');
+  const [show, setShow] = useState("");
+  const [name, setName] = useState("");
+  const [date, setDate] = useState("");
   const [price, setPrice] = useState(0);
 
   const [book, setBook] = useState([]);
 
+  useEffect(() => {
+    const bookedUsers = JSON.parse(localStorage.getItem("bookedUsers")) || [];
+    setBook(bookedUsers);
+  }, []);
+
   const bookShow = (e) => {
     e.preventDefault();
-    if(name === '') {
-      alert('Please select Name');
+    if (name === "") {
+      alert("Please select Name");
       return;
     }
-    if(date === '') {
-      alert('Please select date');
+    if (date === "") {
+      alert("Please select date");
       return;
     }
-    if(price === 0) {
-      alert('Please select price');
+    if (price === 0) {
+      alert("Please select price");
       return;
     }
-    setBook([...book, {
-      show: show,
-      name: name,
-      date: date,
-      price: price,
-    }]);
+    setBook([
+      ...book,
+      {
+        show: show,
+        name: name,
+        date: date,
+        price: price,
+      },
+    ]);
+    localStorage.setItem(
+      "bookedUsers",
+      JSON.stringify([
+        ...book,
+        {
+          show: show,
+          name: name,
+          date: date,
+          price: price,
+        },
+      ])
+    );
   };
-  
+
   console.log(book);
 
   return (
