@@ -106,7 +106,7 @@ function Show() {
             <img
               src={
                 data[index].show.image
-                  ? data[index].show.image.medium
+                  ? data[index].show.image.original
                   : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
               }
               className="flex-none md:h-48 md:w-48 rounded-t-lg md:rounded-l-lg md:rounded-r-none"
