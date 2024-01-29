@@ -38,7 +38,7 @@ function Show() {
     }
   }, []);
 
-  const [show, setShow] = useState("");
+  // const [show, setShow] = useState("");
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
   const [price, setPrice] = useState(0);
@@ -67,7 +67,7 @@ function Show() {
     setBook([
       ...book,
       {
-        show: show,
+        show: data[index].show.name,
         name: name,
         date: date,
         price: price,
@@ -78,7 +78,7 @@ function Show() {
       JSON.stringify([
         ...book,
         {
-          show: show,
+          show: data[index].show.name,
           name: name,
           date: date,
           price: price,
@@ -88,6 +88,7 @@ function Show() {
   };
 
   console.log(book);
+
 
   return (
     <div className="w-screnn h-full md:h-screen bg-black p-4">
@@ -145,7 +146,7 @@ function Show() {
                     type="text"
                     name="show"
                     value={data[index].show.name}
-                    onChange={(e) => setShow(data[index].show.name)}
+                    onChange={() => (<></>)}
                     className="py-2 px-4 outline-none"
                   />
                 </label>
@@ -172,7 +173,7 @@ function Show() {
                 <label className="flex justify-center m-2">
                   <input
                     type="date"
-                    name="show"
+                    name="date"
                     value={date}
                     onChange={(e) => setDate(e.target.value)}
                     className="py-2 px-4 outline-none"

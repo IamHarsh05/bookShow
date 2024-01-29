@@ -5,6 +5,7 @@ import {
   MagnifyingGlassIcon,
 } from "@heroicons/react/20/solid";
 import React, { Fragment } from "react";
+import { Link } from "react-router-dom/dist";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -27,10 +28,15 @@ export default function Navbar() {
   return (
     <div className="fixed z-20 md:z-50 px-4 w-full bg-slate-200">
       <div className="flex flex-col z-0 md:flex-row ">
-        <div className="min-w-0 my-4 px-4 flex-1 md:my-2">
+        <div className="min-w-0 my-4 px-4 flex items-center flex-1 md:my-2">
           <h2 className="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">
             Dashboard
           </h2>
+          <Link to={`/booked`}>
+            <p className="flex justify-center px-4 hover:cursor-pointer hover:text-orange-400 md:justify-start text-2xl font-black">
+              Booked
+            </p>
+          </Link>
         </div>
         <div className="mt-5 flex items-center lg:ml-4 lg:mt-0">
           <span className="sm:ml-3 inline-flex items-baseline">
