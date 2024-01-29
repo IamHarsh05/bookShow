@@ -86,6 +86,9 @@ function Show() {
         },
       ])
     );
+    setName('');
+    setPrice('');
+    setDate('');
   };
 
   console.log(book);
