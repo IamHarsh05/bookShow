@@ -68,6 +68,7 @@ function Show() {
     setBook([
       ...book,
       {
+        details: data[index],
         show: data[index].show.name,
         name: name,
         date: date,
@@ -79,6 +80,7 @@ function Show() {
       JSON.stringify([
         ...book,
         {
+          details: data[index],
           show: data[index].show.name,
           name: name,
           date: date,
