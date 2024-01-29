@@ -41,7 +41,7 @@ function Show() {
   // const [show, setShow] = useState("");
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
-  const [price, setPrice] = useState(0);
+  const [price, setPrice] = useState('');
 
   const [book, setBook] = useState([]);
 
@@ -157,6 +157,7 @@ function Show() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     className="py-2 px-4 outline-none"
+                    placeholder="Username"
                   />
                 </label>
               </div>
@@ -168,6 +169,7 @@ function Show() {
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
                     className="py-2 px-4 outline-none"
+                    placeholder="Price"
                   />
                 </label>
                 <label className="flex justify-center m-2">
