@@ -41,7 +41,7 @@ function Show() {
   // const [show, setShow] = useState("");
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
-  const [price, setPrice] = useState('');
+  const [price, setPrice] = useState("");
 
   const [book, setBook] = useState([]);
 
@@ -64,6 +64,7 @@ function Show() {
       alert("Please select price");
       return;
     }
+    alert("Show Booked");
     setBook([
       ...book,
       {
@@ -88,7 +89,6 @@ function Show() {
   };
 
   console.log(book);
-
 
   return (
     <div className="w-screnn h-full md:h-screen bg-black p-4">
@@ -146,7 +146,7 @@ function Show() {
                     type="text"
                     name="show"
                     value={data[index].show.name}
-                    onChange={() => (<></>)}
+                    onChange={() => <></>}
                     className="py-2 px-4 outline-none"
                   />
                 </label>
