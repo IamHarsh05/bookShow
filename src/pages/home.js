@@ -9,7 +9,7 @@ export default function Home() {
       {/* Side Bar */}
       <Navbar />
       <div className="flex w-screen py-16 md:py-2">
-        <div className="w-screen overflow-y-scroll overflow-x-hidden md:basis-4/5">
+        <div className="w-screen overflow-y-scroll overflow-x-hidden">
           {/* Main Dashboard */}
           <Shows />
         </div>
